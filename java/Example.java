@@ -4,17 +4,19 @@ import java.sql.*;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void printSelectedIDs(String query){
 		try{
-			ResultSet rs = DataAccess.dataAccessQuery(
-					"select * "+
-					"from table "+
-					"where x = y");
+			ResultSet rs = DataAccess.dataAccessQuery(query);
 			while(rs.next()){
-				System.out.println(rs.getInt("x"));
+				System.out.println(rs.getInt("id"));
 			}
 		}catch(Exception e){
 			e.getStackTrace();
 		}
+	}
+	
+	public static void main(String[] args) {
+		String s = "select * from table where id = x";
+		printSelectedIDs(s);
 	}
 }
