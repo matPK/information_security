@@ -14,7 +14,7 @@ public class Main {
 			e.getStackTrace();
 		}
 	}
-	public static boolean updateTable(int x, int y, query){
+	public static boolean updateTable(int x, int y, String query){
 		try{
 			DataAccess.nullDataAccessQuery(query);
 			return true;
